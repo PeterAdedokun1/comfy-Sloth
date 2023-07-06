@@ -1,16 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import
 import { Navbar, Sidebar, Footer } from "./components";
-// import styled from 'styled-components'
 import {
   AboutPage,
-  AuthWrapper,
+  // AuthWrapper,
   CartPage,
   CheckoutPage,
   Error,
   Home,
-  PrivateRoute,
+  // PrivateRoute,
   ProductsPage,
   SingleProductPage,
 } from "./pages";
