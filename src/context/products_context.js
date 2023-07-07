@@ -19,6 +19,9 @@ const initialState = {
   products_error: false,
   products: [],
   featured_products: [],
+  single_product_loading: false,
+  single_product_error: false,
+  single_product: []
   }
 
 
@@ -48,7 +51,18 @@ export const ProductsProvider = ({ children }) => {
   
   useEffect(() => {
     fetchProducts(url)
-  },[])
+  }, [])
+  
+  const fetchSingleProducts = async () => {
+    dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
+    try {
+      const resp = await axios.get(url);
+      const singleProduct = await resp.data;
+      dispatch({type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct})
+    } catch (error) {
+      dispatch({type: GET_SINGLE_PRODUCT_ERROR})
+    }
+  }
  
   return (
     <ProductsContext.Provider value={{...state, openSideBar, closeSideBar}}>
