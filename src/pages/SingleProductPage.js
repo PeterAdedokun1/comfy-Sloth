@@ -36,7 +36,6 @@ const SingleProductPage = () => {
   }, [error]);
   const { name, price, stock, stars, reviews, description, company, images } =
     product;
-  console.log(product);
   if (loading) {
     return <Loading />;
   }
@@ -55,7 +54,7 @@ const SingleProductPage = () => {
           <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars />
+            <Stars reviews = {reviews} stars={stars} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">

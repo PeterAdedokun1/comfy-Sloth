@@ -1,8 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
-const Stars = () => {
-  return <h4>stars</h4>
+const Stars = ({ stars, reviews }) => {
+  console.log(stars, reviews)
+  return <Wrapper>
+    <div className="stars">
+      {/* star */}
+      <span>
+        
+      </span>
+      {/* end of star */}
+    </div>
+    <p className="reviews">({reviews} customer reviews)</p>
+  </Wrapper>
 }
 
 const Wrapper = styled.div`
