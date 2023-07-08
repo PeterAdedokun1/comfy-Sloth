@@ -28,7 +28,6 @@ const AddToCart = ({ product }) => {
          return tempAmount;
        });
   }
-  console.log(mainColor);
 
   return <Wrapper>
     <div className="colors">
