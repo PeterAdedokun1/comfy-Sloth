@@ -7,9 +7,24 @@ import AmountButtons from './AmountButtons'
 
 const AddToCart = ({ product }) => {
   const { id, stock, colors } = product;
-  
-  return <Wrapper>
+  const [mainColor, setMainColor] = useState(colors[0]);
+  console.log(mainColor);
 
+  return <Wrapper>
+    <div className="colors">
+      <span>colors: </span>
+      <div>
+        {
+          colors.map((color,index) => (
+            <button key={index} style={{background: color}} className={`${mainColor === color ? "color-btn active" : "color-btn"}`} onClick={() => setMainColor(color)}>
+              {mainColor === color ? <FaCheck/> : null}
+            </button>
+          ))
+        }
+      
+      </div>
+    </div>
+    <div className="btn-container"></div>
   </Wrapper>
 }
 
