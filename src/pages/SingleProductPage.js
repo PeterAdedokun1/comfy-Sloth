@@ -31,7 +31,7 @@ const SingleProductPage = () => {
     if (error) {
       setTimeout(() => {
         navigate("/");
-      }, 2000);
+      }, 3000);
     }
   }, [error]);
   const { name, price, stock, stars, reviews, description, company, images } =
