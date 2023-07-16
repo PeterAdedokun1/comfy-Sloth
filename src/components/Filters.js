@@ -87,7 +87,19 @@ const Filters = () => {
             <div className="colors">
               {colors.map((c, index) => {
                 if (c === "all") {
-                  return <button name="color" onClick={updateFilters} data-color="all" className={`${color === "all" ? "all-btn active" : "all-btn"}`}>all</button>
+                  return (
+                    <button
+                      key={index}
+                      name="color"
+                      onClick={updateFilters}
+                      data-color="all"
+                      className={`${
+                        color === "all" ? "all-btn active" : "all-btn"
+                      }`}
+                    >
+                      all
+                    </button>
+                  );
                 }
                 return (
                   <button
@@ -107,6 +119,21 @@ const Filters = () => {
             </div>
           </div>
           {/* end */}
+          {/* price */}
+          <div className="form-control">
+            <h5>price</h5>
+            <p className="p">{formatPrice(price)}</p>
+            <input
+              type="range"
+              name="price"
+              id=""
+              onChange={updateFilters}
+              min={min_price}
+              max={max_price}
+              value={price}
+            />
+          </div>
+          {/* end of price */}
         </form>
       </div>
     </Wrapper>
