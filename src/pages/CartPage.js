@@ -17,10 +17,10 @@ const CartPage = () => {
   return <main>
     <PageHero title="cart" />
     <Wrapper className='page'>
-      <CartContent/>
+      <CartContent />
     </Wrapper>
   </main>
-
+}
 const Wrapper = styled.main`
   .empty {
     text-align: center;
