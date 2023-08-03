@@ -63,12 +63,8 @@ const cart_reducer = (state, action) => {
             }
             return { ...item, amount: newAmount };
         }
-      } else {
-        return item;
-      }
+      } return item
     });
-    if (value === "inc") {
-    }
     return { ...state, cart: tempCart };
   }
   if (action.type === COUNT_CART_TOTALS) {
